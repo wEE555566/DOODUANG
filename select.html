@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เลือกไพ่ของคุณ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-container" id="page-select">
+
+    <div class="interaction-box select-box">
+        <img src="image/wangpai.png" id="wangpai-img" alt="วางไพ่">
+
+        <h1>กรุณาเลือกไพ่ 3 ใบ</h1>
+
+        <div id="card-results"></div>
+
+        <button id="get-reading-btn" class="hidden">ดูคำทำนาย</button>
+    </div>
+
+    <div id="loading-modal" class="modal-overlay">
+        <div class="modal-content loading">
+            <div class="spinner"></div>
+            <p>ดวงของท่านกำลังเดินทางมา...</p>
+        </div>
+    </div>
+
+    <div id="result-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>คำทำนายของคุณมาแล้ว</h2>
+            <p id="result-text"></p>
+            <button id="close-result-btn">ปิด</button>
+        </div>
+    </div>
+
+    <div class="nav-back">
+        <button id="back-to-index" class="btn" onclick="location.href='index.html'">กลับไปหน้าแรก</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

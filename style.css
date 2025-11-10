@@ -1,0 +1,390 @@
+/* --- (ใหม่) หน้า Splash (index.html) --- */
+.splash-page {
+    background-image: url('image/back_home.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* ดันให้ footer อยู่ข้างล่าง */
+    text-align: center;
+}
+.pawee-image{
+    width: 450px; /* ปรับขนาดโลโก้ตามต้องการ */
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+}
+
+#home-logo {
+    width: 450px; /* ปรับขนาดโลโก้ตามต้องการ */
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+}
+
+.start-btn {
+    background-color: #8a4a9c;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.start-btn:hover {
+    background-color: #b37ac4;
+    transform: scale(1.05);
+}
+
+.splash-footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.5); /* พื้นหลังโปร่งแสง */
+    font-size: 0.9rem;
+    box-sizing: border-box; /* ป้องกัน padding ดัน layout */
+}
+.splash-footer p {
+    margin: 0.3rem 0;
+}
+
+/* --- (เปลี่ยนชื่อ) หน้า Topic (topics.html) --- */
+/* ให้ลบ .home-page เก่าทิ้ง แล้วใช้ .topic-page นี้แทน */
+.topic-page { 
+    background-image: url('image/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* เพิ่มให้พื้นหลังไม่เลื่อน */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้เต็มจอ */
+}
+
+/* --- ส่วนที่เหลือของ style.css ---
+  ( .topic-container, .topic-grid, .page-container, .modal-overlay ฯลฯ )
+  ... ใช้ของเดิมได้เลย ไม่ต้องแก้ ...
+*/
+/* --- การตั้งค่าทั่วไป --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- หน้า Home (เลือกหัวข้อ) --- */
+.home-page {
+    background-image: url('image/back.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topic-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+.topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.topic-btn {
+    background-color: #8a4a9c;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+.topic-btn:hover {
+    background-color: #b37ac4;
+    transform: scale(1.05);
+}
+
+/* --- พื้นหลังรวมสำหรับหน้า Reading, Video, Select --- */
+.page-container {
+    background-image: url('image/back_card.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* --- กล่อง UI หลัก (สำหรับหน้า Reading และ Select) --- */
+.interaction-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* --- หน้า Reading (สับไพ่) --- */
+#gongpai-img {
+    width: 200px;
+}
+#shuffle-btn {
+    background-color: #c0392b;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+#shuffle-btn:hover {
+    background-color: #e74c3c;
+}
+
+/* --- หน้า Video --- */
+#shuffle-video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    border: 3px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* --- หน้า Select (เลือกไพ่) --- */
+.select-box {
+    justify-content: flex-start;
+}
+
+#wangpai-img {
+    width: 400px;
+    max-width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+#wangpai-img:hover {
+    transform: scale(1.03);
+}
+
+#card-results {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    min-height: 220px;
+    flex-wrap: wrap;
+}
+
+.tarot-card {
+    width: 150px;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+#get-reading-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+#get-reading-btn:hover {
+    background-color: #66bb6a;
+}
+
+/* --- Modal (กล่องข้อความ) --- */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+.modal-content.loading {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+}
+#result-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+    white-space: pre-wrap;
+}
+#close-result-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #8a4a9c;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* --- (อัปเดต) สไตล์ Footer เดิม ให้รองรับปุ่ม --- */
+.splash-footer.button-footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* เว้นระยะห่างระหว่างปุ่ม */
+    box-sizing: border-box;
+}
+
+/* (ใหม่) ปุ่มใน Footer */
+.footer-btn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.footer-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* --- (ใหม่) สไตล์สำหรับหน้า Credits.html --- */
+.credits-page {
+    /* ใช้พื้นหลังเดียวกับหน้า Home */
+    background-image: url('image/back_home.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.credits-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.credits-container h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+.credits-section {
+    margin-bottom: 1.5rem;
+}
+
+.credits-section h2 {
+    font-size: 1.5rem;
+    color: #ffd700; /* สีทอง */
+    border-bottom: 2px solid #8a4a9c;
+    padding-bottom: 0.3rem;
+}
+
+.credits-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* (ใหม่) ปุ่มกลับ */
+.back-btn {
+    display: inline-block; /* ทำให้ปุ่มอยู่ตรงกลางได้ */
+    background-color: #c0392b; /* สีแดง */
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    border: 1px solid #fff;
+}
+
+.back-btn:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+}
