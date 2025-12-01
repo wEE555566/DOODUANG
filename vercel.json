@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "build": {
+    "outputDirectory": "public" 
+    // หากไฟล์ HTML/CSS/JS ของคุณอยู่ในโฟลเดอร์ "public" 
+    // ถ้าอยู่ในโฟลเดอร์อื่น ให้เปลี่ยนชื่อโฟลเดอร์ตรงนี้
+  }
+}
