@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingModal.style.display = 'flex';
             
             // ยิง API โดยใช้ 'topic' ที่ส่งต่อมาจากหน้าแรก
-            const apiUrl = `http://127.0.0.1:8000/doo3?content=${topic}`;
+            const apiUrl = `https://dev.abdul.in.th/wee/api/v1/doo3?content=${topic}`;
 
             try {
                 const response = await fetch(apiUrl);
@@ -98,5 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultModal.style.display = 'none';
         });
     }
+
 
 });
